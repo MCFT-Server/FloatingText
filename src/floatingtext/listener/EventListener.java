@@ -34,12 +34,12 @@ public class EventListener extends BaseListener<Main> {
 		if (args.length < 1) {
 			return false;
 		}
-		queue.put(sender.getName(), glue(args, " "));
+		queue.put(sender.getName(), join(" ", args));
 		plugin.getDB().message(sender, "Touch the creation point FlotingText.");
 		return true;
 	}
 	
-	public String glue(String[] strs, String glue) {
+	private String join(String glue, String[] strs) {
 		String string = "";
 		for (String str : strs) {
 			string += glue + str;

@@ -20,7 +20,7 @@ public class DataBase extends BaseDB<Main> {
 	public void initText(Player player) {
 		for(Entry<String, Object> entry : getDB("textlist").getAll().entrySet()) {
 			Position pos = stringToPos(entry.getKey());
-			if (pos.level == null) return;
+			if (pos.level == null) continue;
 			pos.level.addParticle(new FloatingTextParticle(pos, "", ((String) entry.getValue()).replace("\\n", "\n")), player);
 		}
 	}
