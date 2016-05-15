@@ -59,7 +59,7 @@ public class EventListener extends BaseListener<Main> {
 	}
 	
 	private String posToString(Position pos) {
-		return (int)pos.x + ":" + (int)pos.y + ":" + (int)pos.z + ":" + pos.getLevel().getName();
+		return (int)pos.x + ":" + (int)pos.y + ":" + (int)pos.z + ":" + pos.getLevel().getFolderName();
 	}
 	
 	@EventHandler
