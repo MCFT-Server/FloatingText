@@ -34,9 +34,17 @@ public class EventListener extends BaseListener<Main> {
 		if (args.length < 1) {
 			return false;
 		}
-		queue.put(sender.getName(), args[0]);
+		queue.put(sender.getName(), glue(args, " "));
 		plugin.getDB().message(sender, "Touch the creation point FlotingText.");
 		return true;
+	}
+	
+	public String glue(String[] strs, String glue) {
+		String string = "";
+		for (String str : strs) {
+			string += glue + str;
+		}
+		return string.substring(1);
 	}
 	
 	@EventHandler
