@@ -27,6 +27,6 @@ public class DataBase extends BaseDB<Main> {
 	
 	private Position stringToPos(String pos) {
 		String args[] = pos.split(":");
-		return new Position(Integer.parseInt(args[0]) + 0.5, Integer.parseInt(args[1]) + 1, Integer.parseInt(args[2]) + 0.5, Server.getInstance().getLevelByName(args[3]));
+		return new Position(Integer.parseInt(args[0]) + 0.5, Integer.parseInt(args[1]), Integer.parseInt(args[2]) + 0.5, Server.getInstance().getLevelByName(args[3]));
 	}
 }

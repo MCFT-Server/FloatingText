@@ -53,7 +53,7 @@ public class EventListener extends BaseListener<Main> {
 		Position pos = event.getBlock();
 		if (!queue.containsKey(player.getName())) return;
 		plugin.getDB().getDB("textlist").set(posToString(pos), queue.get(player.getName()));
-		event.getBlock().getLevel().addParticle(new FloatingTextParticle(new Position(pos.x + 0.5, pos.y + 1, pos.z + 0.5, pos.level), "", queue.get(player.getName()).replace("\\n", "\n")));
+		event.getBlock().getLevel().addParticle(new FloatingTextParticle(new Position(pos.x + 0.5, pos.y, pos.z + 0.5, pos.level), "", queue.get(player.getName()).replace("\\n", "\n")));
 		queue.remove(player.getName());
 		plugin.getDB().message(player, "Add floatingtext success!");
 	}
