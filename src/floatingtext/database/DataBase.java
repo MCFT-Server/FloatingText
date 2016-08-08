@@ -21,7 +21,7 @@ public class DataBase extends BaseDB<Main> {
 		for(Entry<String, Object> entry : getDB("textlist").getAll().entrySet()) {
 			Position pos = stringToPos(entry.getKey());
 			if (pos.level == null) continue;
-			pos.level.addParticle(new FloatingTextParticle(pos, "", ((String) entry.getValue()).replace("\\n", "\n")), player);
+			pos.level.addParticle(new FloatingTextParticle(pos, "", ((String) entry.getValue()).replace("<br>", "\n")), player);
 		}
 	}
 	

@@ -1,7 +1,7 @@
 name: FloatingText
 main: floatingtext.Main
 author: maru
-version: "1.0.5"
+version: "1.1.0"
 api: ["1.0.0"]
 
 commands:
