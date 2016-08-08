@@ -65,6 +65,7 @@ public class EventListener extends BaseListener<Main> {
 	@EventHandler
 	public void onBreak(BlockBreakEvent event) {
 		Player player = event.getPlayer();
+		if (!player.hasPermission("floatingtext.remove")) return;
 		Position pos = event.getBlock();
 		if (plugin.getDB().getDB("textlist").exists(posToString(pos))) {
 			plugin.getDB().getDB("textlist").remove(posToString(pos));
